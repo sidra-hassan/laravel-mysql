@@ -8,11 +8,17 @@ pipeline {
                 sh 'composer --version'
                 sh 'cp .env.example .env'
                 sh 'php artisan key:generate'
+                sh 'php artisan migrate'
             }
         }
         stage("Unit test") {
             steps {
                 sh 'php artisan test'
+            }
+        }
+        stage("Code coverage") {
+            steps {
+                sh "vendor/bin/phpunit --coverage-html 'reports/coverage'"
             }
         }
     }
