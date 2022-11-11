@@ -25,7 +25,7 @@ pipeline {
     }
     post {
         success{
-            archiveArtifacts artifacts: '/**/*.xml', fingerprint: true
+            archiveArtifacts artifacts: '**/*.xml', fingerprint: true
             
         }
     }
