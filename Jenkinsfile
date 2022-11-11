@@ -21,7 +21,7 @@ pipeline {
                 sh "vendor/bin/phpunit --coverage-html 'reports/coverage'"
             }
         }
-        stage("Code coverage") {
+        stage("Deploy") {
             steps {
                 sh "php artisan serve'"
             }
