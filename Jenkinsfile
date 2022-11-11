@@ -23,7 +23,7 @@ pipeline {
         }
         stage("Deploy") {
             steps {
-                sh "php artisan serve'"
+                sh 'php artisan serve'
             }
         }
     }
