@@ -21,5 +21,10 @@ pipeline {
                 sh "vendor/bin/phpunit --coverage-html 'reports/coverage'"
             }
         }
+        stage("Code coverage") {
+            steps {
+                sh "php artisan serve'"
+            }
+        }
     }
 }
